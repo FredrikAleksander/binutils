@@ -291,6 +291,7 @@ case ${generic_target} in
   i386-*-chaos)				fmt=elf ;;
   i386-*-rdos*)				fmt=elf ;;
   i386-*-darwin*)			fmt=macho ;;
+  i386-*-ikaros*)			fmt=elf em=gnu ;;
 
   i860-*-*)				fmt=elf endian=little ;;
 

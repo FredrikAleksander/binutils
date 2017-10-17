@@ -288,6 +288,7 @@ ALL_EMULATION_SOURCES = \
 	eelf32xstormy16.c \
 	eelf32xtensa.c \
 	eelf_i386.c \
+	eelf_i386_ikaros.c \
 	eelf_i386_be.c \
 	eelf_i386_chaos.c \
 	eelf_i386_fbsd.c \
@@ -506,6 +507,7 @@ ALL_64_EMULATION_SOURCES = \
 	eelf_k1om.c \
 	eelf_k1om_fbsd.c \
 	eelf_x86_64.c \
+	eelf_x86_64_ikaros.c \
 	eelf_x86_64_cloudabi.c \
 	eelf_x86_64_fbsd.c \
 	eelf_x86_64_nacl.c \
@@ -1344,6 +1346,10 @@ eelf32xtensa.c: $(srcdir)/emulparams/elf32xtensa.sh $(ELF_DEPS) \
 eelf_i386.c: $(srcdir)/emulparams/elf_i386.sh \
   $(ELF_X86_DEPS) $(srcdir)/scripttempl/elf.sc ${GEN_DEPENDS}
 
+eelf_i386_ikaros.c: $(srcdir)/emulparams/elf_i386_ikaros.sh \
+  $(ELF_DEPS) $(srcdir)/scripttempl/elf.sc ${GEN_DEPENDS}
+	${GENSCRIPTS} elf_i386_ikaros "$(tdir_elf_i386_ikaros)"
+
 eelf_i386_be.c: $(srcdir)/emulparams/elf_i386_be.sh \
   $(ELF_DEPS) $(srcdir)/scripttempl/elf.sc ${GEN_DEPENDS}
 
@@ -2050,6 +2056,10 @@ eelf_k1om_fbsd.c: $(srcdir)/emulparams/elf_k1om_fbsd.sh \
 
 eelf_x86_64.c: $(srcdir)/emulparams/elf_x86_64.sh \
   $(ELF_X86_DEPS) $(srcdir)/scripttempl/elf.sc ${GEN_DEPENDS}
+
+eelf_x86_64_ikaros.c: $(srcdir)/emulparams/elf_x86_64_ikaros.sh \
+  $(ELF_DEPS) $(srcdir)/scripttempl/elf.sc ${GEN_DEPENDS}
+	${GENSCRIPTS} elf_x86_64_ikaros "$(tdir_elf_x86_64_ikaros)"
 
 eelf_x86_64_cloudabi.c: $(srcdir)/emulparams/elf_x86_64_cloudabi.sh \
   $(srcdir)/emulparams/elf_x86_64.sh \
