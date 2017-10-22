@@ -126,6 +126,7 @@ generic_target=${cpu_type}-$vendor-$os
 case ${generic_target} in
   aarch64*-*-elf*)			fmt=elf;;
   aarch64*-*-fuchsia*)			fmt=elf;;
+  aarch64*-*-ikaros*)			fmt=elf em=gnu ;;
   aarch64*-*-linux*)			fmt=elf em=linux
     case ${cpu}-${os} in
       aarch64*-linux-gnu_ilp32)		arch=aarch64:32 ;;
@@ -148,6 +149,7 @@ case ${generic_target} in
   arm-*-symbianelf*)			fmt=elf em=symbian ;;
   arm-*-kaos*)				fmt=elf ;;
   arm-*-conix*)				fmt=elf ;;
+  arm-*-ikaros*)			fmt=elf em=gnu ;;
   arm-*-freebsd[89].* | armeb-*-freebsd[89].*)
 					fmt=elf  em=freebsd ;;
   arm-*-freebsd* | armeb-*-freebsd*)	fmt=elf  em=armfbsdeabi ;;

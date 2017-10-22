@@ -70,6 +70,8 @@ aarch64_be-*-linux*)	targ_emul=aarch64linuxb
 aarch64-*-linux*)	targ_emul=aarch64linux
 			targ_extra_libpath="aarch64linuxb aarch64linux32 aarch64linux32b armelfb_linux_eabi armelf_linux_eabi"
 			targ_extra_emuls="aarch64elf aarch64elf32 aarch64elf32b aarch64elfb armelf armelfb $targ_extra_libpath" ;;
+aarch64-*-ikaros*)	targ_emul=aarch64elf
+			targ_extra_emuls="armelf $targ_extra_libpath" ;;
 alpha*-*-freebsd* | alpha*-*-kfreebsd*-gnu)
 			targ_emul=elf64alpha_fbsd
 			targ_extra_emuls="elf64alpha alpha"
@@ -112,6 +114,7 @@ arm*b-*-freebsd*)	targ_emul=armelfb_fbsd
 arm*-*-freebsd* | arm-*-kfreebsd*-gnu)
 			targ_emul=armelf_fbsd
 			targ_extra_emuls="armelfb_fbsd armelf" ;;
+arm*-*-ikaros*) targ_emul=armelf ;;
 armeb-*-netbsdelf*)	targ_emul=armelfb_nbsd;
 			targ_extra_emuls="armelf_nbsd armelf armnbsd" ;;
 arm-*-netbsdelf*)	targ_emul=armelf_nbsd;
