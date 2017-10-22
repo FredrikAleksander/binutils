@@ -1,1 +1,0 @@
-. ${srcdir}/emulparams/armelfb.sh
